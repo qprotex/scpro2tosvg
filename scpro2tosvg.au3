@@ -19,13 +19,13 @@ $sSignCut2Path = IniRead('config.ini', "General", "SignCut2Path", "")
 $sSourceFolder = IniRead('config.ini', "General", "SourceFolder", "")
 
 
-ConsoleWrite("scpro2 to svg converter v0.2" & @LF)
+ConsoleWrite("scpro2 to svg converter v0.3" & @LF)
 ConsoleWrite("============================" & @LF & @LF)
 
  $aArray = _FileListToArrayRec($sSourceFolder, "*scpro2;*.sc", $FLTAR_FILES, $FLTAR_RECUR, $FLTAR_SORT)
  ;_ArrayDisplay($aArray, ".EXE Files")
  $filesCount=0
- For $i = 1 to UBound($aArray) - 2
+ For $i = 1 to UBound($aArray) - 1
     $fileName = $sSourceFolder & $aArray[$i]
    $newFileName = StringReplace($fileName, ".scpro2", ".svg")
    $newFileName = StringReplace($newFileName, ".sc", ".svg")
